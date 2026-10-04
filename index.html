@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    // Ensure base href is set so nested routes like /invite/:slug resolve assets from the app root
+    (function() {
+      var pathname = window.location.pathname;
+      var baseHref = '/';
+      if (pathname.includes('/invite/')) {
+        baseHref = pathname.substring(0, pathname.indexOf('/invite/') + 1);
+      }
+      var baseEl = document.createElement('base');
+      baseEl.href = baseHref;
+      document.head.insertBefore(baseEl, document.head.firstChild);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Teacher’s Day Celebration 2026 | Electrical Engineering Department</title>
+  <meta name="description" content="A special digital invitation to the Teacher's Day Celebration 2026 - Electrical Engineering Department.">
+  <meta name="theme-color" content="#070d18">
+
+  <!-- Open Graph / WhatsApp Sharing Meta Tags -->
+  <meta property="og:title" content="A Special Invitation | Teacher's Day Celebration 2026">
+  <meta property="og:description" content="You are cordially invited to the Teacher's Day Celebration by the Electrical Engineering Department.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+
+  <!-- Google Fonts: Cormorant Garamond, Cinzel & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- GitHub Pages SPA Redirect Receiver Script -->
+  <script>
+    (function(l) {
+      if (l.search[1] === '/') {
+        var decoded = l.search.slice(1).split('&').map(function(s) { 
+          return s.replace(/~and~/g, '&');
+        }).join('?');
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location));
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Gold Dust Canvas -->
+  <canvas id="particlesCanvas" class="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- Background Decorative Glows -->
+  <div class="glow-orb orb-top-left" aria-hidden="true"></div>
+  <div class="glow-orb orb-bottom-right" aria-hidden="true"></div>
+  <div class="ambient-vignette" aria-hidden="true"></div>
+
+  <!-- Audio Control Bar (Top Right) -->
+  <header class="top-nav">
+    <div class="brand-crest">
+      <svg class="crest-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+      </svg>
+      <span class="crest-text">EE DEPT • 2026</span>
+    </div>
+
+    <div class="nav-actions">
+      <!-- Music Toggle Button -->
+      <button id="musicToggleBtn" class="pill-btn music-btn" aria-label="Toggle ambient music" title="Toggle background music">
+        <span class="music-waves" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </span>
+        <span id="musicBtnLabel" class="music-label">Music: Off</span>
+      </button>
+
+      <!-- Admin / Links Directory Button -->
+      <button id="directoryModalBtn" class="pill-btn directory-btn" aria-label="Teacher Links Directory" title="View all 9 personalized links">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+        </svg>
+        <span>Teacher Links</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main class="invitation-container" id="mainApp">
+
+    <!-- ==============================================
+         STAGE 1: LUXURY COVER / ENVELOPE OPENING SCREEN
+         ============================================== -->
+    <section id="coverStage" class="screen-stage active" aria-label="Invitation Cover">
+      <div class="cover-card glass-panel">
+        
+        <!-- Ornate Corner Accents -->
+        <div class="ornament top-left" aria-hidden="true"></div>
+        <div class="ornament top-right" aria-hidden="true"></div>
+        <div class="ornament bottom-left" aria-hidden="true"></div>
+        <div class="ornament bottom-right" aria-hidden="true"></div>
+
+        <div class="cover-content">
+          <!-- Sparkle Emblem -->
+          <div class="emblem-wrapper">
+            <div class="emblem-halo"></div>
+            <div class="emblem-circle">
+              <svg class="emblem-svg" viewBox="0 0 100 100" fill="none">
+                <circle cx="50" cy="50" r="46" stroke="url(#goldGradient)" stroke-width="1.5" stroke-dasharray="4 3"/>
+                <circle cx="50" cy="50" r="38" stroke="url(#goldGradient)" stroke-width="1"/>
+                <path d="M50 18 L53 38 L73 41 L55 52 L60 72 L47 58 L32 70 L39 51 L23 40 L43 38 Z" fill="url(#goldGradient)" opacity="0.9"/>
+                <defs>
+                  <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#fdf0cd"/>
+                    <stop offset="50%" stop-color="#d4af37"/>
+                    <stop offset="100%" stop-color="#9a7b1c"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+
+          <div class="golden-tag">
+            <span class="tag-sparkle">✦</span>
+            <span class="tag-text">ELECTRICAL ENGINEERING DEPARTMENT</span>
+            <span class="tag-sparkle">✦</span>
+          </div>
+
+          <h2 class="cover-badge">✨ A Special Invitation ✨</h2>
+
+          <!-- Dynamic greeting teaser if valid teacher -->
+          <div id="coverTeacherTeaser" class="cover-teaser">
+            <span class="prepared-for">Exclusively prepared for</span>
+            <div id="teaserTeacherName" class="teacher-highlight shimmer-text">Honored Faculty Member</div>
+          </div>
+
+          <p class="cover-subtext">
+            In honor of dedication, mentorship, and excellence in shaping future electrical engineers.
+          </p>
+
+          <!-- Interactive Seal Button -->
+          <div class="envelope-cta">
+            <button id="openInvitationBtn" class="luxury-open-btn" aria-label="Open Your Invitation">
+              <span class="btn-glow"></span>
+              <span class="btn-border"></span>
+              <span class="btn-text">
+                <span class="btn-label">Open Your Invitation</span>
+                <span class="btn-icon">💌</span>
+              </span>
+            </button>
+            <span class="btn-hint">Tap to unseal your personalized invitation</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         STAGE 2: MAIN PERSONALIZED INVITATION CARD
+         ============================================== -->
+    <section id="cardStage" class="screen-stage hidden" aria-label="Personalized Invitation Details">
+      <div class="invitation-card-wrapper">
+        <article class="invitation-card glass-panel" id="printableCard">
+
+          <!-- Gold Metallic Foil Borders & Filigrees -->
+          <div class="ornament top-left" aria-hidden="true"></div>
+          <div class="ornament top-right" aria-hidden="true"></div>
+          <div class="ornament bottom-left" aria-hidden="true"></div>
+          <div class="ornament bottom-right" aria-hidden="true"></div>
+          <div class="card-inner-border" aria-hidden="true"></div>
+
+          <div class="card-body">
+            
+            <!-- Top Leaf Header -->
+            <div class="invite-header-tag">
+              <span class="leaf-deco">🌿</span>
+              <span class="card-subtitle-text">A Special Invitation</span>
+              <span class="leaf-deco">🌿</span>
+            </div>
+
+            <!-- Personalized Salutation -->
+            <div class="salutation-container">
+              <div class="greeting-prefix">Dear</div>
+              <h1 id="invitationTeacherName" class="teacher-title-name">
+                Prof. Dr. Irfan Abid
+              </h1>
+              <div class="salutation-line" aria-hidden="true"></div>
+            </div>
+
+            <!-- Inspirational Quote -->
+            <blockquote class="teacher-quote">
+              <span class="quote-mark">“</span>
+              <span class="quote-text">A great teacher inspires, guides, and leaves a lasting impact.</span>
+              <span class="quote-mark">”</span>
+            </blockquote>
+
+            <div class="intro-courtesy">
+              With heartfelt gratitude and appreciation,<br>
+              You are warmly invited to our
+            </div>
+
+            <!-- Event Title Badge -->
+            <div class="event-title-badge">
+              <div class="crest-line" aria-hidden="true"></div>
+              <h2 class="main-event-title">Teacher’s Day Celebration 2026</h2>
+              <div class="crest-line" aria-hidden="true"></div>
+            </div>
+
+            <!-- Event Metadata Grid -->
+            <div class="event-details-grid">
+              
+              <div class="detail-item">
+                <div class="detail-icon-circle">
+                  <span class="icon">📅</span>
+                </div>
+                <div class="detail-info">
+                  <span class="detail-label">Date</span>
+                  <span class="detail-value" id="eventDateText">5 October 2026</span>
+                </div>
+              </div>
+
+              <div class="detail-item">
+                <div class="detail-icon-circle">
+                  <span class="icon">⏰</span>
+                </div>
+                <div class="detail-info">
+                  <span class="detail-label">Time</span>
+                  <span class="detail-value" id="eventTimeText">1:00 PM</span>
+                </div>
+              </div>
+
+              <div class="detail-item">
+                <div class="detail-icon-circle">
+                  <span class="icon">📍</span>
+                </div>
+                <div class="detail-info">
+                  <span class="detail-label">Venue</span>
+                  <span class="detail-value" id="eventVenueText">Room 66</span>
+                </div>
+              </div>
+
+              <div class="detail-item full-width">
+                <div class="detail-icon-circle">
+                  <span class="icon">🏫</span>
+                </div>
+                <div class="detail-info">
+                  <span class="detail-label">Department</span>
+                  <span class="detail-value" id="eventDeptText">Electrical Engineering Department</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Divider -->
+            <div class="filigree-divider" aria-hidden="true">
+              <span class="line"></span>
+              <span class="diamond">◆</span>
+              <span class="line"></span>
+            </div>
+
+            <!-- Emotional Closing Note -->
+            <p class="card-highlight-message">
+              Your presence will make this celebration even more special.
+            </p>
+
+            <div class="card-signature-block">
+              <span class="signature-respect">With sincere gratitude and respect,</span>
+              <strong class="signature-sender">Your Students ❤️</strong>
+            </div>
+
+            <!-- Action Buttons for Teacher Convenience -->
+            <div class="card-action-bar">
+              <!-- Calendar Add -->
+              <button id="addToCalendarBtn" class="action-btn calendar-action" title="Add this event to your calendar">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/>
+                  <line x1="8" y1="2" x2="8" y2="6"/>
+                  <line x1="3" y1="10" x2="21" y2="10"/>
+                  <path d="M12 14v4M10 16h4"/>
+                </svg>
+                <span>Add to Calendar</span>
+              </button>
+
+              <!-- RSVP / Share Feedback via WhatsApp -->
+              <button id="rsvpBtn" class="action-btn rsvp-action" title="Acknowledge or send warm wishes">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                </svg>
+                <span>Acknowledge / RSVP</span>
+              </button>
+            </div>
+
+            <!-- Back to Cover button -->
+            <button id="reviewCoverBtn" class="text-link-btn" title="View opening cover again">
+              <span>↺ View Opening Cover</span>
+            </button>
+
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         STAGE 3: 404 / INVITATION NOT FOUND SCREEN
+         ============================================== -->
+    <section id="notFoundStage" class="screen-stage hidden" aria-label="Invitation Not Found">
+      <div class="cover-card glass-panel not-found-panel">
+        <div class="ornament top-left" aria-hidden="true"></div>
+        <div class="ornament top-right" aria-hidden="true"></div>
+        <div class="ornament bottom-left" aria-hidden="true"></div>
+        <div class="ornament bottom-right" aria-hidden="true"></div>
+
+        <div class="cover-content">
+          <div class="not-found-icon">⚠️</div>
+          <h2 class="not-found-title">Invitation Not Found</h2>
+          <p class="not-found-desc">
+            We couldn’t find a personalized invitation for the address:
+            <br>
+            <code id="invalidPathDisplay" class="invalid-code-badge">/invite/...</code>
+          </p>
+          <p class="not-found-hint">
+            Please make sure you entered the correct teacher link or choose your honored faculty member from the directory.
+          </p>
+
+          <div class="not-found-actions">
+            <button id="openDefaultInviteBtn" class="luxury-open-btn">
+              <span class="btn-text">
+                <span class="btn-label">View General Invitation</span>
+                <span class="btn-icon">🏛️</span>
+              </span>
+            </button>
+            <button id="viewDirectoryFrom404Btn" class="pill-btn directory-btn">
+              <span>View All 9 Teacher Links</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================================
+       ADMIN / TEACHER LINKS DIRECTORY MODAL
+       ============================================== -->
+  <aside id="directoryModal" class="modal-overlay hidden" aria-hidden="true" role="dialog" aria-labelledby="modalHeading">
+    <div class="modal-container glass-panel">
+      <div class="modal-header">
+        <div class="modal-header-text">
+          <div class="modal-pretitle">ELECTRICAL ENGINEERING DEPARTMENT</div>
+          <h2 id="modalHeading" class="modal-title">Personalized Teacher Links</h2>
+          <p class="modal-desc">
+            Click any link to view the invitation, or tap <strong>Copy Link</strong> / <strong>WhatsApp</strong> to directly send it to the professor.
+          </p>
+        </div>
+        <button id="closeModalBtn" class="modal-close-btn" aria-label="Close modal">×</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="links-list" id="teachersListContainer">
+          <!-- Dynamically populated from script.js -->
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div class="modal-tip">
+          💡 <strong>Tip for WhatsApp:</strong> Tap "WhatsApp" next to any teacher to open WhatsApp Web/App with a pre-composed polite message including their personalized link!
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Toast Notification Bubble -->
+  <div id="toastNotification" class="toast-bubble" role="status" aria-live="polite">
+    <span id="toastIcon">✨</span>
+    <span id="toastMessage">Link copied to clipboard!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

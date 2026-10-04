@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // GitHub Pages SPA Redirect Script
+    // Seamlessly redirects direct URLs (like /invite/irfan-abid) back to index.html with the path intact
+    (function () {
+      var l = window.location;
+      var pathSegmentsToKeep = 0;
+      
+      // If deployed on github.io with repository subfolder (e.g., username.github.io/repo-name/)
+      if (l.hostname.endsWith('github.io')) {
+        var segments = l.pathname.split('/').filter(Boolean);
+        // If the first path segment is not "invite", it is the repository name
+        if (segments.length > 0 && segments[0] !== 'invite') {
+          pathSegmentsToKeep = 1;
+        }
+      }
+
+      var basePath = l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/');
+      var redirectPath = l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~');
+      var queryString = l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '';
+      
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        basePath + '/?/' + redirectPath + queryString + l.hash
+      );
+    })();
+  </script>
+</head>
+<body>
+</body>
+</html>
